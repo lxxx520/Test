@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>登录</title>
+
+    <style type="text/css">
+        div{
+            text-align: center;
+        }
+        .username{
+            height: 30px;
+            width: 240px;
+        }
+        #login{
+            height: 30px;
+            width: 240px;
+        }
+        .ra{
+            height: 20px;
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+
+        <div id="div" >
+            <form method="post" action="/insertUser">
+                <input class="username" name="username"  placeholder="请输入登记名" type="text"/>
+                <br>
+                <input class="ra" type="radio" name="sex" value="男"> 男-->
+                <input  class="ra" type="radio" name="sex" value="女" > 女
+                <br>
+                <input id="login" type="submit" value="登记"/>
+            </form>
+        </div>
+
+</body>
+</html>

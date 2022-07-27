@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>列表</title>
+    <style>
+        table{
+            border: 1px solid red;
+            margin: 0 auto;
+            width: 700px;
+        }
+        td,th{
+            border: 1px solid red;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<table>
+
+    <tr>
+        <th>
+            <input type="checkbox" id="all">
+        </th>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>登记时间</th>
+    </tr>
+    <tr th:each="l,i  : ${users}">
+        <td>
+            <input type="checkbox" th:value="${l.id}">
+        </td>
+        <td  th:text="${l.id}"></td>
+        <td th:text="${l.username}"></td>
+        <td th:text="${l.sex}"></td>
+        <td th:text="${#dates.format(l.createTime,'yyyy-MM-dd HH:mm:ss')}"}></td>
+    </tr>
+
+</table>
+<div>
+    总人数 : <span th:text="${count}"}></span> <br>
+    男 : <span th:text="${nan}"}></span> <br>
+    女 : <span th:text="${nv}"}></span> <br>
+</div>
+
+</body>
+</html>
